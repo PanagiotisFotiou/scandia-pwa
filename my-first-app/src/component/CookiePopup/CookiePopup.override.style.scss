@@ -1,0 +1,79 @@
+.CookiePopup {
+    background-color: #ffffff;
+    opacity: 0.96;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;    
+    padding-block: 10px;
+    padding-inline: 25px;
+    border-radius: 30px;
+    box-shadow: 0px 10px 80px 0px rgba(0, 0, 0, 0.10);
+
+    @include desktop {
+        width: fit-content;
+        inset-inline-start: 25px;
+        inset-block-end: 25px;
+        transform: none;
+        justify-content: space-between;
+    }
+
+    @include mobile {
+        justify-content: center;
+        margin: 0;
+        inset-block-end: calc(var(--footer-total-height) + 1px);
+        gap: 10px;
+    }
+
+    &-Content {
+        color: var(--paragraph-color);
+        font-size: 16px;
+
+        &::after {
+            display: none;
+        }
+
+        @include mobile {
+            font-size: 14px;
+        }
+    }
+
+    &-Link {
+        display: block;
+        font-size: 16px;
+
+        @include mobile {
+            font-size: 14px;
+        }
+    }
+
+    &-Title {
+        color: var(--h2-color);
+        margin: 0;
+        width: 100%;
+        text-align: center;
+
+        &::after {
+            content: "";
+            border-bottom: 1px solid #dcdcdc;
+            display: block;
+            padding-block-start: 10px;
+        }
+    }
+
+    &-CTA {
+        margin-inline-start: 0;
+        color: #ffffff;
+        text-align: center;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 24px;
+        padding-block: 15px;
+        border-radius: 10px;
+
+        &.Button:not([disabled]):hover {
+            border-radius: 10px;
+        }
+    }
+}
